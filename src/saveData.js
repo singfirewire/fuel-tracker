@@ -1,8 +1,8 @@
-import app from './firebaseConfig.js';
+import app from './firebaseConfig.js'; // Add this line to import the app object
 import { getDatabase, ref, set } from "firebase/database";
 
 const saveFuelRecord = (date, liters, pricePerLiter, totalPrice, fuelType, station) => {
-    const db = getDatabase(app);
+    const db = getDatabase(app); // Now you can use the app object here
     const recordRef = ref(db, 'fuelRecords/' + Date.now());
     set(recordRef, {
         date: date,
